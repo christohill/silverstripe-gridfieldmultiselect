@@ -177,7 +177,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
         } else {
             $records = DataObject::get($class)->filter('ID', $ids);
             foreach ($records as $index => $record) {
-                call_user_func($this->rowHandler, $record, $index);
+                call_user_func($this->rowHandler, $record, $index, $data);
             }
         }
 
